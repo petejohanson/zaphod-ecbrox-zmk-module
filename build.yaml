@@ -17,3 +17,10 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
+include:
+  - board: seeeduino_xiao
+    shield: topreviung
+  - board: seeeduino_xiao
+    shield: topreviung
+    snippet: enable_ec_calibrator
+    artifact-name: topreviung_seeeduino_xiao_calibrator

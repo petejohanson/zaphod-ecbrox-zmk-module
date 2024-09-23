@@ -1,0 +1,4 @@
+config SHIELD_TOPREVIUNG
+    def_bool $(shields_list_contains,topreviung)
+    select ADC
+    select GPIO

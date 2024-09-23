@@ -1,0 +1,6 @@
+if SHIELD_TOPREVIUNG
+
+config ZMK_KEYBOARD_NAME
+    default "Topreviung"
+
+endif

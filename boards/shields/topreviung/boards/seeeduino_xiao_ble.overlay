@@ -1,0 +1,10 @@
+
+&matrix {
+	power-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
+	matrix-warm-up-us = <500>;
+};
+
+&uicr {
+	nfct-pins-as-gpios;
+};
+
