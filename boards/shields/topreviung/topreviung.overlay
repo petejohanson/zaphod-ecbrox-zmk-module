@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
+&xiao_serial { status = "disabled"; };
 &xiao_adc {
 	status = "okay";
 };
@@ -77,7 +78,7 @@
 		        , <&xiao_d 3 GPIO_ACTIVE_HIGH>
 			;
 
-		en-gpios = <&xiao_d 4 GPIO_ACTIVE_HIGH>;
+		en-gpios = <&xiao_d 4 GPIO_ACTIVE_LOW>;
 
 		gpio-controller;
 		ngpios = <8>;
@@ -92,7 +93,7 @@
 		        , <&xiao_d 3 GPIO_ACTIVE_HIGH>
 			;
 
-		en-gpios = <&xiao_d 5 GPIO_ACTIVE_HIGH>;
+		en-gpios = <&xiao_d 5 GPIO_ACTIVE_LOW>;
 
 		gpio-controller;
 		ngpios = <8>;
@@ -102,7 +103,7 @@
 	matrix: matrix {
 		compatible = "zmk,kscan-ec-matrix";
 
-		matrix-relax-us = <3>;
+		matrix-relax-us = <10>;
 		adc-read-settle-us = <1>;
 
 		strobe-gpios
@@ -113,21 +114,21 @@
 			;
 
 		input-gpios
-			= <&left_mux 0 0>
+			= <&left_mux 2 0>
 			, <&left_mux 1 0>
-			, <&left_mux 2 0>
+			, <&left_mux 0 0>
 			, <&left_mux 3 0>
 			, <&left_mux 5 0>
 			, <&left_mux 7 0>
-			, <&right_mux 0 0>
-			, <&right_mux 1 0>
-			, <&right_mux 2 0>
-			, <&right_mux 3 0>
 			, <&right_mux 4 0>
 			, <&right_mux 6 0>
+			, <&right_mux 2 0>
+			, <&right_mux 1 0>
+			, <&right_mux 0 0>
+			, <&right_mux 3 0>
 			;
 
-		drain-gpios = <&xiao_d 6 GPIO_OPEN_DRAIN>;
+		drain-gpios = <&xiao_d 6 GPIO_ACTIVE_HIGH>;
 		io-channels = <&xiao_adc 0>;
 		strobe-input-masks = <
 			0
