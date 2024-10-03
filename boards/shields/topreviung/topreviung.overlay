@@ -103,7 +103,7 @@
 	matrix: matrix {
 		compatible = "zmk,kscan-ec-matrix";
 
-		matrix-relax-us = <10>;
+		matrix-relax-us = <3>;
 		adc-read-settle-us = <1>;
 
 		strobe-gpios

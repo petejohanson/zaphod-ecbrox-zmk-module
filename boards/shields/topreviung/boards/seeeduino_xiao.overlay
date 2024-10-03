@@ -23,7 +23,6 @@
 	};
 };
 
-#if 0
 /delete-node/ &storage_partition;
 
 &code_partition { 
@@ -42,4 +41,3 @@
 		};
 	};
 };
-#endif
