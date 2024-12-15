@@ -6,9 +6,6 @@
 #include <physical_layouts.dtsi>
 
 &xiao_serial { status = "disabled"; };
-&xiao_adc {
-	status = "okay";
-};
 
 / {
 	chosen {
@@ -103,7 +100,7 @@
 	matrix: matrix {
 		compatible = "zmk,kscan-ec-matrix";
 
-		matrix-relax-us = <3>;
+		matrix-relax-us = <1000>;
 		adc-read-settle-us = <1>;
 
 		strobe-gpios
@@ -129,7 +126,7 @@
 			;
 
 		drain-gpios = <&xiao_d 6 GPIO_ACTIVE_HIGH>;
-		io-channels = <&xiao_adc 0>;
+		// io-channels = <&xiao_adc 0>;
 		strobe-input-masks = <
 			0
 			0

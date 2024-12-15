@@ -11,7 +11,7 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: le-capybara-zmk-module
+    - name: ec-support-zmk-module
       remote: petejohanson
       revision: main
   self:

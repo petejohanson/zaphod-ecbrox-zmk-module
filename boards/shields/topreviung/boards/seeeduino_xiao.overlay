@@ -23,6 +23,10 @@
 	};
 };
 
+&matrix {
+	io-channels = <&adc 0>;
+};
+
 /delete-node/ &storage_partition;
 
 &code_partition { 
