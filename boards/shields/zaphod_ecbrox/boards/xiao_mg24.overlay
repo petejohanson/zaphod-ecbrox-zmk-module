@@ -1,0 +1,22 @@
+#include "dt-bindings/adc/silabs-adc.h"
+#include <zephyr/dt-bindings/dt-util.h>
+
+&matrix {
+	io-channels = <&adc0 1>;
+};
+
+&adc0 {
+	status = "okay";
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+	// EC Read
+	channel@1 {
+		reg = <1>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+		zephyr,input-positive = <IADC_INPUT_PC1>;
+	};
+};

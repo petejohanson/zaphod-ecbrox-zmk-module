@@ -1,0 +1,4 @@
+config SHIELD_ZAPHOD_ECBROX
+    def_bool $(shields_list_contains,zaphod_ecbrox)
+    select ADC
+    select GPIO

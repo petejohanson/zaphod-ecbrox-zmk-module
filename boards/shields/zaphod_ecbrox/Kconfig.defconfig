@@ -1,0 +1,6 @@
+if SHIELD_ZAPHOD_ECBROX
+
+config ZMK_KEYBOARD_NAME
+    default "Zaphod ECBrox"
+
+endif

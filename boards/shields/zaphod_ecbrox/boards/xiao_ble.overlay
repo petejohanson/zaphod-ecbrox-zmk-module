@@ -1,0 +1,114 @@
+#include <zephyr/dt-bindings/gpio/nordic-nrf-gpio.h>
+#include <zephyr/dt-bindings/dt-util.h>
+
+&matrix {
+	strobe-gpios
+			= <&gpio1 11 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H0H1)>
+		        , <&gpio0 5  (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H0H1)>
+		        , <&gpio0 29 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H0H1)>
+		        , <&gpio0 4  (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H0H1)>
+			;
+	io-channels = <&adc 1>;
+	matrix-relax-us = <3>;
+	adc-read-settle-us = <1>;
+		precalib-avg-highs = <
+		3509
+		3278
+		3054
+		3106
+		3633
+		3004
+		3474
+		3652
+		2868
+		3550
+		2930
+		3621
+		3548
+		3636
+		3343
+		3430
+		3581
+		3584
+		3253
+		3609
+		3651
+		3318
+		3271
+		3345
+		3643
+		3495
+		3578
+		3281
+		3258
+		2842
+		0
+		0
+		0
+		3437
+		3251
+		2826
+		3315
+		0
+		0
+		0
+	>;
+precalib-avg-lows = <
+		63
+		63
+		62
+		81
+		76
+		63
+		220
+		68
+		251
+		64
+		62
+		68
+		61
+		74
+		71
+		65
+		178
+		66
+		63
+		72
+		117
+		68
+		68
+		79
+		176
+		407
+		132
+		127
+		157
+		120
+		0
+		0
+		0
+		63
+		171
+		61
+		62
+		0
+		0
+		0
+	>;
+};
+
+&adc {
+	status = "okay";
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+	// EC Read
+	channel@1 {
+		reg = <1>;
+		zephyr,input-positive = <NRF_SAADC_AIN1>; /* P0.03 */
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 3)>;
+		zephyr,resolution = <12>;
+	};
+};
