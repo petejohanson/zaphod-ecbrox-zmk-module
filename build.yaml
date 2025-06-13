@@ -18,9 +18,9 @@
 #
 ---
 include:
-  - board: seeeduino_xiao
-    shield: topreviung
-  - board: seeeduino_xiao
-    shield: topreviung
+  - board: xiao_ble
+    shield: zaphod_ecbrox
+  - board: xiao_ble
+    shield: zaphod_ecbrox
     snippet: enable_ec_calibrator
-    artifact-name: topreviung_seeeduino_xiao_calibrator
+    artifact-name: zaphod_ecbrox_xiao_ble_calibrator
